@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Travel Survey</h1>
+        <form id="travelForm">
+            <!-- Destination -->
+            <label for="destination">Where did you travel?</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+
+            <!-- Activities -->
+            <label for="activities">What activities did you enjoy?</label>
+            <textarea id="activities" name="activities" rows="4" placeholder="e.g., hiking, museums, beaches" required></textarea>
+
+            <!-- Travel Type -->
+            <label for="travelType">Type of travel</label>
+            <select id="travelType" name="travelType" required>
+                <option value="">--Select--</option>
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="culture">Culture</option>
+                <option value="nature">Nature</option>
+                <option value="city">City</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('travelForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const destination = document.getElementById('destination').value;
+            const activities = document.getElementById('activities').value;
+            const travelType = document.getElementById('travelType').value;
+            
+            // Logging the form data for now (can be sent to backend)
+            console.log({ destination, activities, travelType });
+            
+            alert('Survey submitted! We will recommend spots based on your preferences.');
+        });
+    </script>
+</body>
+</html>

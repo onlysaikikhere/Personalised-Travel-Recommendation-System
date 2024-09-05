@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Survey</title>
     <style>
-        /* General reset */
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +16,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Background setup */
         body {
             background: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
             background-size: cover;
@@ -26,7 +24,6 @@
             align-items: center;
         }
 
-        /* Overlay to dim the background */
         .overlay {
             position: absolute;
             top: 0;
@@ -37,17 +34,17 @@
             z-index: 0;
         }
 
-        /* Form container styling */
         .form-container {
             position: relative;
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             width: 100%;
             text-align: center;
+            animation: fadeIn 1s ease-out;
         }
 
         h1 {
@@ -62,6 +59,7 @@
             display: block;
             text-align: left;
             margin-top: 15px;
+            transition: color 0.3s ease;
         }
 
         input, textarea, select {
@@ -71,6 +69,12 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
         }
 
         button {
@@ -82,16 +86,40 @@
             border-radius: 5px;
             font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         .form-footer {
             margin-top: 20px;
             color: #555;
+        }
+
+        /* Error styling */
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Responsive styling */
@@ -112,10 +140,12 @@
             <!-- Destination -->
             <label for="destination">Where did you travel?</label>
             <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+            <div class="error" id="destinationError"></div>
 
             <!-- Activities -->
             <label for="activities">What activities did you enjoy?</label>
             <textarea id="activities" name="activities" rows="4" placeholder="e.g., hiking, museums, beaches" required></textarea>
+            <div class="error" id="activitiesError"></div>
 
             <!-- Travel Type -->
             <label for="travelType">Type of travel</label>
@@ -127,6 +157,7 @@
                 <option value="nature">Nature</option>
                 <option value="city">City</option>
             </select>
+            <div class="error" id="travelTypeError"></div>
 
             <!-- Submit Button -->
             <button type="submit">Submit</button>
@@ -140,14 +171,40 @@
     <script>
         document.getElementById('travelForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const destination = document.getElementById('destination').value;
-            const activities = document.getElementById('activities').value;
+
+            // Clear previous errors
+            document.getElementById('destinationError').textContent = '';
+            document.getElementById('activitiesError').textContent = '';
+            document.getElementById('travelTypeError').textContent = '';
+
+            // Get values
+            const destination = document.getElementById('destination').value.trim();
+            const activities = document.getElementById('activities').value.trim();
             const travelType = document.getElementById('travelType').value;
 
-            // For now, log the data to the console (can be processed later)
-            console.log({ destination, activities, travelType });
+            let isValid = true;
 
-            alert('Survey submitted successfully!');
+            // Validate inputs
+            if (!destination) {
+                document.getElementById('destinationError').textContent = 'Please enter a destination.';
+                isValid = false;
+            }
+
+            if (!activities) {
+                document.getElementById('activitiesError').textContent = 'Please enter activities.';
+                isValid = false;
+            }
+
+            if (!travelType) {
+                document.getElementById('travelTypeError').textContent = 'Please select a travel type.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // If all inputs are valid, log the data and show success message
+                console.log({ destination, activities, travelType });
+                alert('Survey submitted successfully!');
+            }
         });
     </script>
 </body>

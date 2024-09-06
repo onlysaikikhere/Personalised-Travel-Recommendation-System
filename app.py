@@ -7,7 +7,7 @@ CORS(app)  # Enable CORS for cross-origin requests if the frontend is hosted sep
 
 # Load tourist spots from external file
 def load_tourist_spots():
-    with open('amtp/tourist_spots.json', 'r') as file:
+    with open('tourist_spots.json', 'r') as file:
         return json.load(file)
 
 tourist_spots = load_tourist_spots()  # Load the data when the server starts

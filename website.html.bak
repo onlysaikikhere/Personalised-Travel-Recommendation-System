@@ -128,27 +128,6 @@
                 padding: 20px;
             }
         }
-
-        /* Recommendations styling */
-        #recommendations {
-            margin-top: 20px;
-            max-height: 300px; /* Adjust as needed */
-            overflow-y: auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            text-align: left;
-        }
-
-        #recommendations ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #recommendations li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -189,7 +168,7 @@
         </div>
 
         <!-- Recommendation Result -->
-        <div id="recommendations"></div>
+        <div id="recommendations" style="margin-top: 20px;"></div>
     </div>
 
     <script>

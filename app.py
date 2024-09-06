@@ -7,17 +7,17 @@ CORS(app)  # Enable CORS for cross-origin requests if the frontend is hosted sep
 
 # Load tourist spots from external file
 def load_tourist_spots():
-    with open('tourist_spots.json', 'r') as file:
+    with open('amtp/tourist_spots.json', 'r') as file:
         return json.load(file)
 
 tourist_spots = load_tourist_spots()  # Load the data when the server starts
 
 # Helper function to match user preferences with tourist spots
-def get_recommendations(activities, travel_type):
+def get_recommendations(travel_type):
     matched_spots = []
     
-    # Convert activities and travel_type into a set of keywords
-    user_keywords = set(activities.lower().split() + [travel_type.lower()])
+    # Convert travel_type into a set of keywords
+    user_keywords = set(travel_type.lower().split())
 
     for spot in tourist_spots:
         # Convert spot keywords to a set
@@ -36,22 +36,19 @@ def get_recommendations(activities, travel_type):
     # Return only the top 5 spot names
     return [spot["name"] for spot in matched_spots[:5]]
 
-
 # Route to handle form data and return recommendations
 @app.route('/submit', methods=['POST'])
 def submit():
     # Get data from the frontend
     data = request.get_json()
-    destination = data.get('destination', '')
-    activities = data.get('activities', '')
     travel_type = data.get('travelType', '')
 
     # Validate the input data
-    if not destination or not activities or not travel_type:
-        return jsonify({"error": "All fields are required!"}), 400
+    if not travel_type:
+        return jsonify({"error": "Please select at least 3 travel preferences."}), 400
 
-    # Get recommendations based on activities and travel type
-    recommendations = get_recommendations(activities, travel_type)
+    # Get recommendations based on travel type
+    recommendations = get_recommendations(travel_type)
 
     # Return recommendations as JSON
     if recommendations:

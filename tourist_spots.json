@@ -1,130 +1,466 @@
 [
-    {"name": "Maldives", "keywords": ["beaches", "relaxation", "nature"]},
-    {"name": "Paris", "keywords": ["museums", "art", "culture"]},
-    {"name": "New York", "keywords": ["city", "shopping", "adventure"]},
-    {"name": "Bali", "keywords": ["beaches", "hiking", "nature"]},
-    {"name": "Tokyo", "keywords": ["technology", "city", "culture"]},
-    {"name": "Swiss Alps", "keywords": ["hiking", "nature", "adventure"]},
-    {"name": "Rome", "keywords": ["history", "architecture", "culture"]},
-    {"name": "Sydney", "keywords": ["beaches", "city", "adventure"]},
-    {"name": "London", "keywords": ["history", "museums", "city"]},
-    {"name": "Santorini", "keywords": ["islands", "sunset", "relaxation"]},
-    {"name": "Amsterdam", "keywords": ["canals", "biking", "museums"]},
-    {"name": "Cairo", "keywords": ["pyramids", "history", "desert"]},
-    {"name": "Bangkok", "keywords": ["temples", "street food", "nightlife"]},
-    {"name": "Dubai", "keywords": ["shopping", "luxury", "skyscrapers"]},
-    {"name": "Venice", "keywords": ["canals", "romance", "architecture"]},
-    {"name": "Machu Picchu", "keywords": ["ruins", "hiking", "history"]},
-    {"name": "Istanbul", "keywords": ["culture", "history", "mosques"]},
-    {"name": "Barcelona", "keywords": ["art", "architecture", "beaches"]},
-    {"name": "Hong Kong", "keywords": ["shopping", "city", "skyline"]},
-    {"name": "Phuket", "keywords": ["beaches", "nightlife", "islands"]},
-    {"name": "Rio de Janeiro", "keywords": ["beaches", "festivals", "mountains"]},
-    {"name": "Marrakech", "keywords": ["markets", "culture", "architecture"]},
-    {"name": "Los Angeles", "keywords": ["Hollywood", "beaches", "shopping"]},
-    {"name": "Las Vegas", "keywords": ["casinos", "nightlife", "entertainment"]},
-    {"name": "Seoul", "keywords": ["technology", "culture", "shopping"]},
-    {"name": "Kyoto", "keywords": ["temples", "gardens", "culture"]},
-    {"name": "Santorini", "keywords": ["islands", "romantic", "views"]},
-    {"name": "Florence", "keywords": ["art", "architecture", "history"]},
-    {"name": "Athens", "keywords": ["ruins", "culture", "history"]},
-    {"name": "Buenos Aires", "keywords": ["tango", "culture", "city"]},
-    {"name": "Prague", "keywords": ["history", "architecture", "castles"]},
-    {"name": "Berlin", "keywords": ["history", "museums", "culture"]},
-    {"name": "Vienna", "keywords": ["music", "palaces", "culture"]},
-    {"name": "Copenhagen", "keywords": ["canals", "design", "history"]},
-    {"name": "Cape Town", "keywords": ["mountains", "beaches", "nature"]},
-    {"name": "Havana", "keywords": ["culture", "music", "history"]},
-    {"name": "Lisbon", "keywords": ["history", "culture", "architecture"]},
-    {"name": "Edinburgh", "keywords": ["castles", "history", "festivals"]},
-    {"name": "Reykjavik", "keywords": ["nature", "geysers", "adventure"]},
-    {"name": "Hawaii", "keywords": ["volcanoes", "beaches", "hiking"]},
-    {"name": "Mexico City", "keywords": ["culture", "history", "food"]},
-    {"name": "Petra", "keywords": ["ruins", "desert", "history"]},
-    {"name": "Moscow", "keywords": ["architecture", "history", "museums"]},
-    {"name": "Stockholm", "keywords": ["museums", "design", "waterfront"]},
-    {"name": "Jerusalem", "keywords": ["religion", "history", "culture"]},
-    {"name": "Milan", "keywords": ["fashion", "design", "architecture"]},
-    {"name": "Cancun", "keywords": ["beaches", "nightlife", "resorts"]},
-    {"name": "Siem Reap", "keywords": ["temples", "history", "culture"]},
-    {"name": "Singapore", "keywords": ["city", "gardens", "technology"]},
-    {"name": "Buenos Aires", "keywords": ["tango", "music", "culture"]},
-    {"name": "Naples", "keywords": ["history", "food", "culture"]},
-    {"name": "Dubrovnik", "keywords": ["coastline", "history", "architecture"]},
-    {"name": "Kuala Lumpur", "keywords": ["skyscrapers", "city", "shopping"]},
-    {"name": "Toronto", "keywords": ["city", "multicultural", "skyscrapers"]},
-    {"name": "Vancouver", "keywords": ["mountains", "city", "adventure"]},
-    {"name": "Beijing", "keywords": ["history", "palaces", "culture"]},
-    {"name": "Lisbon", "keywords": ["beaches", "history", "architecture"]},
-    {"name": "Munich", "keywords": ["beer", "culture", "museums"]},
-    {"name": "Bruges", "keywords": ["canals", "romantic", "history"]},
-    {"name": "Santiago", "keywords": ["mountains", "culture", "city"]},
-    {"name": "Salzburg", "keywords": ["music", "history", "mountains"]},
-    {"name": "Oslo", "keywords": ["fjord", "museums", "nature"]},
-    {"name": "Granada", "keywords": ["palaces", "history", "architecture"]},
-    {"name": "Mumbai", "keywords": ["city", "culture", "Bollywood"]},
-    {"name": "Krakow", "keywords": ["history", "architecture", "castles"]},
-    {"name": "Shanghai", "keywords": ["city", "skyscrapers", "culture"]},
-    {"name": "Zanzibar", "keywords": ["beaches", "islands", "nature"]},
-    {"name": "Luxor", "keywords": ["ruins", "history", "temples"]},
-    {"name": "Hanoi", "keywords": ["culture", "history", "temples"]},
-    {"name": "Montreal", "keywords": ["culture", "festivals", "city"]},
-    {"name": "Cusco", "keywords": ["history", "ruins", "hiking"]},
-    {"name": "Belize", "keywords": ["beaches", "diving", "nature"]},
-    {"name": "Vienna", "keywords": ["palaces", "music", "culture"]},
-    {"name": "Nice", "keywords": ["beaches", "culture", "museums"]},
-    {"name": "Bora Bora", "keywords": ["islands", "beaches", "luxury"]},
-    {"name": "Lisbon", "keywords": ["castles", "coastline", "culture"]},
-    {"name": "Tuscany", "keywords": ["vineyards", "countryside", "history"]},
-    {"name": "Seville", "keywords": ["history", "flamenco", "architecture"]},
-    {"name": "Palermo", "keywords": ["history", "architecture", "culture"]},
-    {"name": "Verona", "keywords": ["history", "romantic", "architecture"]},
-    {"name": "Melbourne", "keywords": ["culture", "art", "shopping"]},
-    {"name": "Colombo", "keywords": ["history", "beaches", "culture"]},
-    {"name": "Okinawa", "keywords": ["islands", "beaches", "nature"]},
-    {"name": "Manila", "keywords": ["city", "shopping", "culture"]},
-    {"name": "Cannes", "keywords": ["film", "beaches", "luxury"]},
-    {"name": "Tallinn", "keywords": ["history", "culture", "architecture"]},
-    {"name": "Malaga", "keywords": ["beaches", "history", "museums"]},
-    {"name": "Brisbane", "keywords": ["city", "beaches", "nature"]},
-    {"name": "Yosemite", "keywords": ["nature", "hiking", "waterfalls"]},
-    {"name": "Santorini", "keywords": ["islands", "sunset", "romance"]},
-    {"name": "Zagreb", "keywords": ["history", "culture", "architecture"]},
-    {"name": "Phnom Penh", "keywords": ["culture", "history", "temples"]},
-    {"name": "Salvador", "keywords": ["culture", "history", "beaches"]},
-    {"name": "Dubrovnik", "keywords": ["history", "islands", "coastline"]},
-    {"name": "Nice", "keywords": ["beaches", "coastline", "art"]},
-    {"name": "Galapagos", "keywords": ["wildlife", "islands", "nature"]},
-    {"name": "Mexico City", "keywords": ["culture", "history", "museums"]},
-    {"name": "Auckland", "keywords": ["city", "nature", "waterfront"]},
-    {"name": "Hobart", "keywords": ["nature", "history", "waterfront"]},
-    {"name": "Vilnius", "keywords": ["history", "architecture", "culture"]},
-    {"name": "Agra", "keywords": ["Taj Mahal", "history", "architecture"]},
-    {"name": "Amalfi Coast", "keywords": ["coastline", "beaches", "romantic"]},
-    {"name": "Corfu", "keywords": ["beaches", "islands", "nature"]},
-    {"name": "Lima", "keywords": ["culture", "food", "history"]},
-    {"name": "Brussels", "keywords": ["history", "architecture", "food"]},
-    {"name": "Tahiti", "keywords": ["beaches", "islands", "luxury"]},
-    {"name": "Zermatt", "keywords": ["skiing", "mountains", "adventure"]},
-    {"name": "La Paz", "keywords": ["culture", "mountains", "adventure"]},
-    {"name": "Cartagena", "keywords": ["culture", "coastline", "history"]},
-    {"name": "Pattaya", "keywords": ["beaches", "nightlife", "adventure"]},
-    {"name": "Kyoto", "keywords": ["temples", "history", "gardens"]},
-    {"name": "Galway", "keywords": ["coastline", "culture", "history"]},
-    {"name": "Innsbruck", "keywords": ["skiing", "mountains", "nature"]},
-    {"name": "Fiji", "keywords": ["beaches", "islands", "nature"]},
-    {"name": "Porto", "keywords": ["wine", "coastline", "architecture"]},
-    {"name": "Lagos", "keywords": ["beaches", "history", "coastline"]},
-    {"name": "Bogotá", "keywords": ["culture", "history", "museums"]},
-    {"name": "Valletta", "keywords": ["history", "architecture", "coastline"]},
-    {"name": "Mombasa", "keywords": ["beaches", "culture", "nature"]},
-    {"name": "Reykjavik", "keywords": ["geysers", "adventure", "nature"]},
-    {"name": "Sofia", "keywords": ["history", "culture", "architecture"]},
-    {"name": "Tallinn", "keywords": ["culture", "architecture", "history"]},
-    {"name": "Grenada", "keywords": ["beaches", "islands", "nature"]},
-    {"name": "Chengdu", "keywords": ["pandas", "culture", "nature"]},
-    {"name": "Kigali", "keywords": ["wildlife", "culture", "nature"]},
-    {"name": "Casablanca", "keywords": ["culture", "history", "architecture"]},
-    {"name": "Tbilisi", "keywords": ["culture", "history", "wine"]},
-    {"name": "Krakow", "keywords": ["history", "culture", "architecture"]}
+    {
+        "name": "Jaisalmer Fort",
+        "keywords": ["fort", "history", "sandstone", "architecture", "desert", "Rajasthan", "heritage", "tourism", "culture", "Golden City"]
+    },
+    {
+        "name": "Hampi",
+        "keywords": ["UNESCO", "ruins", "history", "temples", "Karnataka", "architecture", "heritage", "tourism", "monuments", "ancient city"]
+    },
+    {
+        "name": "Amritsar",
+        "keywords": ["Golden Temple", "Sikhism", "pilgrimage", "spirituality", "Punjab", "culture", "history", "tourism", "religion", "heritage"]
+    },
+    {
+        "name": "Manali",
+        "keywords": ["mountains", "Himachal Pradesh", "adventure", "snow", "trekking", "tourism", "nature", "skiing", "honeymoon", "scenic beauty"]
+    },
+    {
+        "name": "Rishikesh",
+        "keywords": ["yoga", "spirituality", "adventure", "Ganges", "rafting", "temples", "Uttarakhand", "tourism", "meditation", "pilgrimage"]
+    },
+    {
+        "name": "Kaziranga National Park",
+        "keywords": ["wildlife", "nature", "conservation", "Assam", "national park", "rhinoceros", "tourism", "safari", "biodiversity", "UNESCO"]
+    },
+    {
+        "name": "Kolkata",
+        "keywords": ["culture", "colonial architecture", "Bengal", "heritage", "Victoria Memorial", "tourism", "literature", "festivals", "art", "history"]
+    },
+    {
+        "name": "Ooty",
+        "keywords": ["hill station", "Tamil Nadu", "nature", "tourism", "tea plantations", "scenic beauty", "Nilgiri Hills", "relaxation", "trekking", "botanical gardens"]
+    },
+    {
+        "name": "Ranthambore National Park",
+        "keywords": ["wildlife", "nature", "tiger reserve", "Rajasthan", "safari", "photography", "forest", "adventure", "tourism", "national park"]
+    },
+    {
+        "name": "Munnar",
+        "keywords": ["hill station", "Kerala", "tea plantations", "nature", "tourism", "wildlife", "scenic beauty", "relaxation", "trekking", "mountains"]
+    },
+    {
+        "name": "Khajuraho Temples",
+        "keywords": ["UNESCO", "temples", "architecture", "Madhya Pradesh", "heritage", "erotic sculptures", "tourism", "history", "art", "religion"]
+    },
+    {
+        "name": "Shimla",
+        "keywords": ["hill station", "Himachal Pradesh", "nature", "tourism", "colonial architecture", "snow", "scenic beauty", "trekking", "adventure", "relaxation"]
+    },
+    {
+        "name": "Ajanta and Ellora Caves",
+        "keywords": ["UNESCO", "caves", "history", "Buddhism", "architecture", "Maharashtra", "art", "heritage", "tourism", "rock-cut temples"]
+    },
+    {
+        "name": "Sundarbans National Park",
+        "keywords": ["wildlife", "mangroves", "Bengal tigers", "West Bengal", "conservation", "UNESCO", "tourism", "biodiversity", "nature", "safari"]
+    },
+    {
+        "name": "Darjeeling",
+        "keywords": ["hill station", "West Bengal", "tea plantations", "tourism", "nature", "scenic beauty", "Himalayas", "toy train", "trekking", "relaxation"]
+    },
+    {
+        "name": "Bodh Gaya",
+        "keywords": ["Buddhism", "pilgrimage", "spirituality", "UNESCO", "Maha Bodhi Temple", "Bihar", "heritage", "tourism", "meditation", "religion"]
+    },
+    {
+        "name": "Mahabalipuram",
+        "keywords": ["UNESCO", "temples", "Tamil Nadu", "architecture", "heritage", "tourism", "sculptures", "ancient history", "Shore Temple", "art"]
+    },
+    {
+        "name": "Coorg",
+        "keywords": ["hill station", "Karnataka", "nature", "coffee plantations", "tourism", "scenic beauty", "trekking", "wildlife", "relaxation", "adventure"]
+    },
+    {
+        "name": "Hyderabad",
+        "keywords": ["charminar", "culture", "history", "tourism", "Andhra Pradesh", "architecture", "heritage", "food", "monuments", "markets"]
+    },
+    {
+        "name": "Alleppey",
+        "keywords": ["houseboats", "backwaters", "Kerala", "nature", "tourism", "relaxation", "waterways", "scenic beauty", "wildlife", "Ayurveda"]
+    },
+    {
+        "name": "Jodhpur",
+        "keywords": ["forts", "history", "Rajasthan", "Blue City", "tourism", "palaces", "culture", "heritage", "architecture", "desert"]
+    },
+    {
+        "name": "Srinagar",
+        "keywords": ["Kashmir", "lakes", "houseboats", "nature", "tourism", "scenic beauty", "Dal Lake", "gardens", "adventure", "culture"]
+    },
+    {
+        "name": "Pondicherry",
+        "keywords": ["French colonial", "beaches", "culture", "architecture", "tourism", "relaxation", "nature", "heritage", "Auroville", "scenic beauty"]
+    },
+    {
+        "name": "Kanha National Park",
+        "keywords": ["wildlife", "tiger reserve", "Madhya Pradesh", "nature", "safari", "conservation", "biodiversity", "forest", "tourism", "photography"]
+    },
+    {
+        "name": "Varkala Beach",
+        "keywords": ["beach", "Kerala", "nature", "tourism", "relaxation", "water sports", "cliffs", "scenic beauty", "Ayurveda", "adventure"]
+    },
+    {
+        "name": "Nainital",
+        "keywords": ["hill station", "Uttarakhand", "lakes", "nature", "tourism", "scenic beauty", "adventure", "trekking", "honeymoon", "boating"]
+    },
+    {
+        "name": "Bangalore",
+        "keywords": ["Silicon Valley of India", "tech city", "Karnataka", "culture", "tourism", "gardens", "nightlife", "heritage", "shopping", "restaurants"]
+    },
+    {
+        "name": "Gulmarg",
+        "keywords": ["hill station", "Kashmir", "skiing", "snow", "nature", "tourism", "adventure", "scenic beauty", "golf course", "trekking"]
+    },
+    {
+        "name": "Ellora Caves",
+        "keywords": ["UNESCO", "caves", "Maharashtra", "Buddhism", "Hinduism", "architecture", "art", "history", "tourism", "heritage"]
+    },
+    {
+        "name": "Haridwar",
+        "keywords": ["spirituality", "Ganges", "pilgrimage", "temples", "Uttarakhand", "religion", "culture", "heritage", "tourism", "Kumbh Mela"]
+    },
+    {
+        "name": "Auroville",
+        "keywords": ["spirituality", "community", "Tamil Nadu", "meditation", "international", "peace", "culture", "tourism", "nature", "sustainable living"]
+    },
+    {
+        "name": "Rajasthan Desert",
+        "keywords": ["desert", "sand dunes", "adventure", "camel safari", "nature", "culture", "tourism", "Thar Desert", "Rajasthan", "camping"]
+    },
+    {
+        "name": "Lakshadweep",
+        "keywords": ["islands", "beaches", "coral reefs", "water sports", "nature", "tourism", "scenic beauty", "relaxation", "marine life", "adventure"]
+    },
+    {
+        "name": "Meenakshi Temple",
+        "keywords": ["temple", "Tamil Nadu", "Hinduism", "architecture", "culture", "heritage", "tourism", "religion", "art", "history"]
+    },
+    {
+        "name": "Gokarna",
+        "keywords": ["beaches", "nature", "Karnataka", "tourism", "spirituality", "temples", "relaxation", "hiking", "scenic beauty", "water sports"]
+    },
+    {
+        "name": "Khajjiar",
+        "keywords": ["hill station", "Himachal Pradesh", "scenic beauty", "meadows", "nature", "tourism", "adventure", "trekking", "paragliding", "relaxation"]
+    },
+    {
+        "name": "Rameswaram",
+        "keywords": ["pilgrimage", "temples", "spirituality", "Tamil Nadu", "Ramanathaswamy Temple", "Hinduism", "tourism", "beaches", "architecture", "culture"]
+    },
+    {
+        "name": "Ziro Valley",
+        "keywords": ["nature", "Arunachal Pradesh", "scenic beauty", "tribal culture", "music festival", "trekking", "tourism", "rice fields", "adventure", "wildlife"]
+    },
+    {
+        "name": "Dharamshala",
+        "keywords": ["Himachal Pradesh", "mountains", "Buddhism", "Dalai Lama", "nature", "trekking", "tourism", "scenic beauty", "spirituality", "monasteries"]
+    },
+    {
+        "name": "Patna Sahib",
+        "keywords": ["Gurdwara", "Sikhism", "pilgrimage", "Bihar", "Guru Gobind Singh", "spirituality", "tourism", "religion", "heritage", "culture"]
+    },
+    {
+        "name": "Pench National Park",
+        "keywords": ["wildlife", "tigers", "Madhya Pradesh", "safari", "nature", "adventure", "national park", "conservation", "tourism", "photography"]
+    },
+    {
+        "name": "Pushkar",
+        "keywords": ["Rajasthan", "camel fair", "lake", "pilgrimage", "temples", "spirituality", "tourism", "desert", "culture", "adventure"]
+    },
+    {
+        "name": "Chittorgarh Fort",
+        "keywords": ["fort", "history", "Rajasthan", "UNESCO", "heritage", "tourism", "architecture", "Mewar", "Rajput", "battles"]
+    },
+    {
+        "name": "Nagaland",
+        "keywords": ["tribal culture", "Hornbill Festival", "nature", "adventure", "tourism", "northeast", "heritage", "hiking", "wildlife", "scenic beauty"]
+    },
+    {
+        "name": "Ranthambore Fort",
+        "keywords": ["fort", "history", "Rajasthan", "heritage", "UNESCO", "tourism", "architecture", "Mughal", "wildlife", "nature"]
+    },
+    {
+        "name": "Spiti Valley",
+        "keywords": ["mountains", "Himachal Pradesh", "trekking", "scenic beauty", "adventure", "monasteries", "tourism", "nature", "high-altitude", "Buddhism"]
+    },
+    {
+        "name": "Jabalpur",
+        "keywords": ["Madhya Pradesh", "marble rocks", "waterfalls", "nature", "tourism", "Narmada River", "adventure", "scenic beauty", "temples", "culture"]
+    },
+    {
+        "name": "Chilka Lake",
+        "keywords": ["lake", "bird sanctuary", "Orissa", "nature", "tourism", "wildlife", "boating", "adventure", "scenic beauty", "water sports"]
+    },
+    {
+        "name": "Jantar Mantar",
+        "keywords": ["astronomy", "monuments", "Rajasthan", "UNESCO", "heritage", "architecture", "science", "tourism", "Mughal", "history"]
+    },
+    {
+        "name": "Belur and Halebidu",
+        "keywords": ["temples", "Karnataka", "architecture", "Hoysala", "heritage", "tourism", "sculptures", "history", "culture", "religion"]
+    },
+    {
+        "name": "Nalanda",
+        "keywords": ["Bihar", "ancient university", "UNESCO", "history", "Buddhism", "architecture", "heritage", "tourism", "monastery", "education"]
+    },
+    {
+        "name": "Hampi Bazaar",
+        "keywords": ["market", "ruins", "Karnataka", "UNESCO", "history", "tourism", "culture", "heritage", "sculptures", "temples"]
+    },
+    {
+        "name": "Agatti Island",
+        "keywords": ["island", "Lakshadweep", "beaches", "coral reefs", "nature", "scenic beauty", "tourism", "marine life", "water sports", "relaxation"]
+    },
+    {
+        "name": "Dwarka",
+        "keywords": ["Gujarat", "temples", "Hinduism", "spirituality", "tourism", "religion", "culture", "history", "pilgrimage", "heritage"]
+    },
+    {
+        "name": "Gangtok",
+        "keywords": ["Sikkim", "hill station", "nature", "tourism", "scenic beauty", "monasteries", "trekking", "Buddhism", "adventure", "culture"]
+    },
+    {
+        "name": "Thanjavur",
+        "keywords": ["Tamil Nadu", "temples", "UNESCO", "heritage", "tourism", "architecture", "Brihadeeswarar Temple", "Chola dynasty", "culture", "art"]
+    },
+    {
+        "name": "Lonavala",
+        "keywords": ["hill station", "Maharashtra", "nature", "tourism", "scenic beauty", "trekking", "adventure", "waterfalls", "caves", "relaxation"]
+    },
+    {
+        "name": "Mahabalipuram Beach",
+        "keywords": ["beach", "Tamil Nadu", "UNESCO", "sculptures", "temples", "relaxation", "nature", "tourism", "water sports", "scenic beauty"]
+    },
+    {
+        "name": "Gangaikonda Cholapuram",
+        "keywords": ["temple", "UNESCO", "Tamil Nadu", "architecture", "Chola dynasty", "tourism", "heritage", "sculptures", "culture", "history"]
+    },
+    {
+        "name": "Mahabaleshwar",
+        "keywords": ["hill station", "Maharashtra", "nature", "tourism", "scenic beauty", "strawberries", "trekking", "adventure", "waterfalls", "relaxation"]
+    },
+    {
+        "name": "Tawang",
+        "keywords": ["Arunachal Pradesh", "monastery", "Buddhism", "nature", "tourism", "scenic beauty", "trekking", "adventure", "snow", "culture"]
+    },
+    {
+        "name": "Diu",
+        "keywords": ["beaches", "Gujarat", "Portuguese heritage", "nature", "tourism", "scenic beauty", "forts", "water sports", "relaxation", "architecture"]
+    },
+    {
+        "name": "Vaishno Devi",
+        "keywords": ["Jammu and Kashmir", "pilgrimage", "temples", "Hinduism", "spirituality", "tourism", "trekking", "mountains", "nature", "religion"]
+    },
+    {
+        "name": "Rajgir",
+        "keywords": ["Bihar", "Buddhism", "pilgrimage", "spirituality", "history", "tourism", "hot springs", "nature", "heritage", "religion"]
+    },
+    {
+        "name": "Lepakshi",
+        "keywords": ["Andhra Pradesh", "temple", "architecture", "Nandi", "heritage", "tourism", "sculptures", "culture", "history", "religion"]
+    },
+    {
+        "name": "Palitana",
+        "keywords": ["Gujarat", "Jain temples", "pilgrimage", "spirituality", "architecture", "heritage", "tourism", "religion", "scenic beauty", "mountain"]
+    },
+    {
+        "name": "Bandhavgarh National Park",
+        "keywords": ["wildlife", "Madhya Pradesh", "tiger reserve", "safari", "nature", "tourism", "photography", "forest", "biodiversity", "conservation"]
+    },
+    {
+        "name": "Nagarhole National Park",
+        "keywords": ["wildlife", "Karnataka", "safari", "nature", "tourism", "tiger reserve", "forest", "photography", "biodiversity", "conservation"]
+    },
+    {
+        "name": "Rameswaram Temple",
+        "keywords": ["Tamil Nadu", "temple", "spirituality", "Hinduism", "architecture", "religion", "tourism", "heritage", "pilgrimage", "culture"]
+    },
+    {
+        "name": "Gwalior Fort",
+        "keywords": ["fort", "Madhya Pradesh", "history", "heritage", "tourism", "architecture", "Rajput", "battles", "monuments", "culture"]
+    },
+    {
+        "name": "Pithoragarh",
+        "keywords": ["Uttarakhand", "hill station", "mountains", "nature", "scenic beauty", "tourism", "trekking", "adventure", "relaxation", "culture"]
+    },
+    {
+        "name": "Ujjain",
+        "keywords": ["Madhya Pradesh", "temples", "Hinduism", "pilgrimage", "spirituality", "Kumbh Mela", "Mahakaleshwar Temple", "tourism", "religion", "culture"]
+    },
+    {
+        "name": "Jawai",
+        "keywords": ["Rajasthan", "wildlife", "leopards", "nature", "safari", "tourism", "photography", "adventure", "scenic beauty", "rural tourism"]
+    },
+    {
+        "name": "Andaman Islands",
+        "keywords": ["beaches", "coral reefs", "water sports", "nature", "adventure", "tourism", "scuba diving", "relaxation", "islands", "marine life"]
+    },
+    {
+        "name": "Mount Abu",
+        "keywords": ["Rajasthan", "hill station", "nature", "Dilwara Temples", "scenic beauty", "tourism", "wildlife", "adventure", "trekking", "relaxation"]
+    },
+    {
+        "name": "Loktak Lake",
+        "keywords": ["lake", "Manipur", "nature", "tourism", "scenic beauty", "floating islands", "wildlife", "adventure", "photography", "water sports"]
+    },
+    {
+        "name": "Bishnupur",
+        "keywords": ["West Bengal", "temples", "architecture", "heritage", "tourism", "terracotta", "history", "culture", "sculptures", "religion"]
+    },
+    {
+        "name": "Pangong Lake",
+        "keywords": ["lake", "Ladakh", "nature", "tourism", "scenic beauty", "mountains", "adventure", "photography", "high-altitude", "tranquility"]
+    },
+    {
+        "name": "Manas National Park",
+        "keywords": ["wildlife", "Assam", "UNESCO", "nature", "safari", "tiger reserve", "biodiversity", "tourism", "conservation", "adventure"]
+    },
+    {
+        "name": "Konark Sun Temple",
+        "keywords": ["temple", "Orissa", "UNESCO", "architecture", "heritage", "tourism", "sculptures", "history", "religion", "sun worship"]
+    },
+    {
+        "name": "Vijayawada",
+        "keywords": ["Andhra Pradesh", "temples", "Krishna River", "spirituality", "tourism", "history", "culture", "heritage", "adventure", "nature"]
+    },
+    {
+        "name": "Gir National Park",
+        "keywords": ["wildlife", "Gujarat", "Asiatic lions", "nature", "safari", "conservation", "biodiversity", "tourism", "photography", "forest"]
+    },
+    {
+        "name": "Sanchi Stupa",
+        "keywords": ["Buddhism", "UNESCO", "Madhya Pradesh", "history", "architecture", "heritage", "tourism", "sculptures", "religion", "spirituality"]
+    },
+    {
+        "name": "Kumbhalgarh Fort",
+        "keywords": ["fort", "Rajasthan", "UNESCO", "heritage", "tourism", "history", "architecture", "Rajput", "Mewar", "battles"]
+    },
+    {
+        "name": "Dholavira",
+        "keywords": ["Gujarat", "archaeological site", "Harappan civilization", "UNESCO", "heritage", "tourism", "history", "architecture", "ruins", "culture"]
+    },
+    {
+        "name": "Tsomgo Lake",
+        "keywords": ["lake", "Sikkim", "nature", "scenic beauty", "mountains", "high-altitude", "tourism", "adventure", "trekking", "photography"]
+    },
+    {
+        "name": "Warangal",
+        "keywords": ["Telangana", "UNESCO", "temples", "fort", "architecture", "heritage", "tourism", "sculptures", "history", "culture"]
+    },
+    {
+        "name": "Bhimbetka Caves",
+        "keywords": ["Madhya Pradesh", "UNESCO", "rock shelters", "cave paintings", "prehistoric", "heritage", "tourism", "history", "art", "archaeology"]
+    },
+    {
+        "name": "Chilika Wildlife Sanctuary",
+        "keywords": ["wildlife", "Orissa", "bird sanctuary", "nature", "tourism", "scenic beauty", "lake", "boating", "biodiversity", "conservation"]
+    },
+    {
+        "name": "Jog Falls",
+        "keywords": ["waterfalls", "Karnataka", "nature", "scenic beauty", "tourism", "adventure", "trekking", "photography", "rivers", "monsoon"]
+    },
+    {
+        "name": "Nashik",
+        "keywords": ["Maharashtra", "temples", "spirituality", "pilgrimage", "Kumbh Mela", "tourism", "vineyards", "wine tourism", "history", "culture"]
+    },
+    {
+        "name": "Varanasi Ghats",
+        "keywords": ["Ganges", "Uttar Pradesh", "pilgrimage", "spirituality", "culture", "heritage", "tourism", "ceremonies", "religion", "history"]
+    },
+    {
+        "name": "Madurai",
+        "keywords": ["Tamil Nadu", "temples", "Meenakshi Temple", "spirituality", "tourism", "architecture", "culture", "heritage", "religion", "history"]
+    },
+    {
+        "name": "Dudhsagar Falls",
+        "keywords": ["waterfalls", "Goa", "Karnataka", "nature", "scenic beauty", "trekking", "tourism", "adventure", "rivers", "monsoon"]
+    },
+    {
+        "name": "Almora",
+        "keywords": ["hill station", "Uttarakhand", "mountains", "nature", "scenic beauty", "trekking", "tourism", "adventure", "culture", "relaxation"]
+    },
+    {
+        "name": "Kolli Hills",
+        "keywords": ["hill station", "Tamil Nadu", "nature", "scenic beauty", "trekking", "tourism", "waterfalls", "adventure", "relaxation", "mountains"]
+    },
+    {
+        "name": "Bharatpur Bird Sanctuary",
+        "keywords": ["wildlife", "Rajasthan", "bird sanctuary", "nature", "tourism", "biodiversity", "photography", "conservation", "forest", "wetlands"]
+    },
+    {
+        "name": "Neemrana Fort",
+        "keywords": ["fort", "Rajasthan", "heritage hotel", "history", "architecture", "luxury", "tourism", "palaces", "culture", "relaxation"]
+    },
+    {
+        "name": "Jorhat",
+        "keywords": ["Assam", "tea plantations", "nature", "tourism", "culture", "heritage", "wildlife", "scenic beauty", "relaxation", "festivals"]
+    },
+    {
+        "name": "Kalimpong",
+        "keywords": ["hill station", "West Bengal", "nature", "scenic beauty", "monasteries", "tourism", "adventure", "trekking", "relaxation", "culture"]
+    },
+    {
+        "name": "Pithoragarh Fort",
+        "keywords": ["fort", "Uttarakhand", "history", "tourism", "architecture", "heritage", "mountains", "scenic beauty", "adventure", "trekking"]
+    },
+    {
+        "name": "Vishakhapatnam",
+        "keywords": ["Andhra Pradesh", "beaches", "port city", "tourism", "nature", "scenic beauty", "temples", "culture", "heritage", "relaxation"]
+    },
+    {
+        "name": "Tirupati",
+        "keywords": ["temples", "Andhra Pradesh", "spirituality", "Hinduism", "pilgrimage", "tourism", "religion", "heritage", "culture", "Tirumala"]
+    },
+    {
+        "name": "Zanskar Valley",
+        "keywords": ["Ladakh", "valley", "nature", "scenic beauty", "adventure", "tourism", "trekking", "high-altitude", "photography", "mountains"]
+    },
+    {
+        "name": "Udaigiri and Khandagiri Caves",
+        "keywords": ["caves", "Orissa", "archaeological site", "heritage", "tourism", "history", "architecture", "Jainism", "sculptures", "religion"]
+    },
+    {
+        "name": "Pelling",
+        "keywords": ["Sikkim", "hill station", "mountains", "nature", "scenic beauty", "tourism", "trekking", "adventure", "monasteries", "relaxation"]
+    },
+    {
+        "name": "Chamba",
+        "keywords": ["Himachal Pradesh", "hill station", "nature", "scenic beauty", "tourism", "temples", "architecture", "culture", "trekking", "adventure"]
+    },
+    {
+        "name": "Shillong",
+        "keywords": ["Meghalaya", "hill station", "nature", "scenic beauty", "tourism", "waterfalls", "adventure", "trekking", "culture", "relaxation"]
+    },
+    {
+        "name": "Ghats of Varanasi",
+        "keywords": ["Ganges", "Uttar Pradesh", "pilgrimage", "spirituality", "tourism", "culture", "heritage", "religion", "ceremonies", "history"]
+    },
+    {
+        "name": "Surat",
+        "keywords": ["Gujarat", "diamond industry", "textile industry", "tourism", "culture", "heritage", "temples", "shopping", "architecture", "history"]
+    },
+    {
+        "name": "Vadodara",
+        "keywords": ["Gujarat", "culture", "heritage", "palaces", "architecture", "history", "tourism", "temples", "museums", "art"]
+    },
+    {
+        "name": "Rourkela",
+        "keywords": ["Orissa", "steel industry", "tourism", "nature", "temples", "culture", "heritage", "dams", "waterfalls", "adventure"]
+    },
+    {
+        "name": "Yelagiri",
+        "keywords": ["hill station", "Tamil Nadu", "nature", "scenic beauty", "trekking", "tourism", "adventure", "relaxation", "mountains", "lakes"]
+    },
+    {
+        "name": "Silvassa",
+        "keywords": ["Dadra and Nagar Haveli", "nature", "wildlife", "scenic beauty", "tribal culture", "tourism", "waterfalls", "adventure", "relaxation", "forests"]
+    },
+    {
+        "name": "Sringeri",
+        "keywords": ["Karnataka", "temples", "spirituality", "Hinduism", "pilgrimage", "tourism", "nature", "heritage", "scenic beauty", "culture"]
+    },
+    {
+        "name": "Sundarbans",
+        "keywords": ["West Bengal", "wildlife", "UNESCO", "tiger reserve", "mangroves", "biodiversity", "tourism", "nature", "conservation", "adventure"]
+    }
 ]

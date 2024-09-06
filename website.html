@@ -47,16 +47,6 @@
             width: 100%;
             text-align: center;
             animation: fadeIn 1s ease-out;
-            overflow-y: auto;
-        }
-
-        ul {
-            height: 100px;
-            width: 540px;
-            background-color: #f1f1f1;
-            overflow-y: auto;
-            margin: 0 auto;
-            padding: 10px;
         }
 
         h1 {
@@ -65,33 +55,15 @@
             margin-bottom: 20px;
         }
 
-        label {
-            font-weight: bold;
-            color: #333;
-            display: block;
-            text-align: left;
-            margin-top: 15px;
-            transition: color 0.3s ease;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
         }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
+        .grid-item {
+            padding: 15px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -101,8 +73,25 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        button:hover {
+        .grid-item.selected {
             background-color: #0056b3;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
             transform: translateY(-2px);
         }
 
@@ -136,6 +125,10 @@
             .form-container {
                 padding: 20px;
             }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -146,23 +139,21 @@
     <div class="form-container">
         <h1>Travel Preferences Survey</h1>
         <form id="travelForm">
-            <label for="destination">Where did you travel?</label>
-            <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
-            <div class="error" id="destinationError"></div>
-
-            <label for="activities">What activities did you enjoy?</label>
-            <textarea id="activities" name="activities" rows="4" placeholder="e.g., hiking, museums, beaches" required></textarea>
-            <div class="error" id="activitiesError"></div>
-
-            <label for="travelType">Type of travel</label>
-            <select id="travelType" name="travelType" required>
-                <option value="">--Select--</option>
-                <option value="adventure">Adventure</option>
-                <option value="relaxation">Relaxation</option>
-                <option value="culture">Culture</option>
-                <option value="nature">Nature</option>
-                <option value="city">City</option>
-            </select>
+            <label for="travelType">Select your travel preferences (3-5):</label>
+            <div class="grid-container" id="grid-container">
+                <button type="button" class="grid-item" data-value="Adventure">Adventure</button>
+                <button type="button" class="grid-item" data-value="Relaxation">Relaxation</button>
+                <button type="button" class="grid-item" data-value="Culture">Culture</button>
+                <button type="button" class="grid-item" data-value="Nature">Nature</button>
+                <button type="button" class="grid-item" data-value="City">City</button>
+                <button type="button" class="grid-item" data-value="Tropical">Tropical</button>
+                <button type="button" class="grid-item" data-value="Mountains">Mountains</button>
+                <button type="button" class="grid-item" data-value="Touring">Touring</button>
+                <button type="button" class="grid-item" data-value="Museums">Museums</button>
+                <button type="button" class="grid-item" data-value="Shopping">Shopping</button>
+                <button type="button" class="grid-item" data-value="Food">Food</button>
+                <button type="button" class="grid-item" data-value="Nightlife">Nightlife</button>
+            </div>
             <div class="error" id="travelTypeError"></div>
 
             <button type="submit">Submit</button>
@@ -176,55 +167,51 @@
     </div>
 
     <script>
+        const selectedPreferences = new Set();
+
+        document.querySelectorAll('.grid-item').forEach(button => {
+            button.addEventListener('click', () => {
+                if (selectedPreferences.has(button.dataset.value)) {
+                    selectedPreferences.delete(button.dataset.value);
+                    button.classList.remove('selected');
+                } else if (selectedPreferences.size < 5) {
+                    selectedPreferences.add(button.dataset.value);
+                    button.classList.add('selected');
+                }
+            });
+        });
+
         document.getElementById('travelForm').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            document.getElementById('destinationError').textContent = '';
-            document.getElementById('activitiesError').textContent = '';
             document.getElementById('travelTypeError').textContent = '';
 
-            const destination = document.getElementById('destination').value.trim();
-            const activities = document.getElementById('activities').value.trim();
-            const travelType = document.getElementById('travelType').value;
-
-            let isValid = true;
-            if (!destination) {
-                document.getElementById('destinationError').textContent = 'Please enter a destination.';
-                isValid = false;
-            }
-            if (!activities) {
-                document.getElementById('activitiesError').textContent = 'Please enter activities.';
-                isValid = false;
-            }
-            if (!travelType) {
-                document.getElementById('travelTypeError').textContent = 'Please select a travel type.';
-                isValid = false;
+            if (selectedPreferences.size < 3) {
+                document.getElementById('travelTypeError').textContent = 'Please select at least 3 options.';
+                return;
             }
 
-            if (isValid) {
-                fetch('http://localhost:5000/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ destination, activities, travelType }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    const recommendationsDiv = document.getElementById('recommendations');
-                
-                    if (data.recommendations && data.recommendations.length > 0) {
-                        recommendationsDiv.innerHTML = `<h2>Recommended Spots:</h2><ul>${data.recommendations.map(spot => `<li>${spot}</li>`).join('')}</ul>`;
-                    } else {
-                        recommendationsDiv.innerHTML = `<h2>${data.message || 'No recommendations found based on your preferences.'}</h2>`;
-                    }
-                
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('There was an error submitting the form.');
-                });
-            }
+            const travelType = Array.from(selectedPreferences).join(', ');
+
+            fetch('http://localhost:5000/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ travelType }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const recommendationsDiv = document.getElementById('recommendations');
+                if (data.recommendations && data.recommendations.length > 0) {
+                    recommendationsDiv.innerHTML = `<h2>Recommended Spots:</h2><ul>${data.recommendations.map(spot => `<li>${spot}</li>`).join('')}</ul>`;
+                } else {
+                    recommendationsDiv.innerHTML = `<h2>${data.message || 'No recommendations found based on your preferences.'}</h2>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting the form.');
+            });
         });
     </script>
 </body>

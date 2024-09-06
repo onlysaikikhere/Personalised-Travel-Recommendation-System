@@ -15,14 +15,27 @@ tourist_spots = load_tourist_spots()  # Load the data when the server starts
 # Helper function to match user preferences with tourist spots
 def get_recommendations(activities, travel_type):
     matched_spots = []
-    keywords = activities.lower().split() + [travel_type.lower()]
     
-    for spot in tourist_spots:
-        # Check if any user keywords match the spot keywords
-        if any(keyword in spot["keywords"] for keyword in keywords):
-            matched_spots.append(spot["name"])
+    # Convert activities and travel_type into a set of keywords
+    user_keywords = set(activities.lower().split() + [travel_type.lower()])
 
-    return matched_spots
+    for spot in tourist_spots:
+        # Convert spot keywords to a set
+        spot_keywords = set(spot["keywords"])
+        
+        # Find intersection between user keywords and spot keywords
+        intersection = user_keywords & spot_keywords
+        
+        # Only add the spot if there's an intersection
+        if intersection:
+            matched_spots.append({"name": spot["name"], "match_count": len(intersection)})
+
+    # Sort spots by the size of the intersection (match_count) in descending order
+    matched_spots = sorted(matched_spots, key=lambda x: x["match_count"], reverse=True)
+
+    # Return only the top 5 spot names
+    return [spot["name"] for spot in matched_spots[:5]]
+
 
 # Route to handle form data and return recommendations
 @app.route('/submit', methods=['POST'])

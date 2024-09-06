@@ -1,18 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for cross-origin requests if the frontend is hosted separately
 
-# Sample tourist spots data
-tourist_spots = [
-    {"name": "Maldives", "keywords": ["beaches", "relaxation", "nature"]},
-    {"name": "Paris", "keywords": ["museums", "art", "culture"]},
-    {"name": "New York", "keywords": ["city", "shopping", "adventure"]},
-    {"name": "Bali", "keywords": ["beaches", "hiking", "nature"]},
-    {"name": "Tokyo", "keywords": ["technology", "city", "culture"]},
-    {"name": "Swiss Alps", "keywords": ["hiking", "nature", "adventure"]},
-]
+# Load tourist spots from external file
+def load_tourist_spots():
+    with open('tourist_spots.json', 'r') as file:
+        return json.load(file)
+
+tourist_spots = load_tourist_spots()  # Load the data when the server starts
 
 # Helper function to match user preferences with tourist spots
 def get_recommendations(activities, travel_type):

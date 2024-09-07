@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Snake Game</title>
+	<style>
+
+.logo{
+	width: 810px;
+}
+
+		.logo h1{
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-weight: bolder;
+			color: #ffa500;
+			display: flex;
+			margin: 0px auto;
+			padding-bottom: 10px;
+			justify-content: center;
+			align-items: center;
+
+		}
+
+		canvas {
+			border: 10px solid #000000;
+			background-color: #ffffff;
+			border-radius: 2mm;
+		}
+
+		.menu {
+			border: #000000 solid 5px;
+			background-color: #ffffff;
+			width: 800px;
+			border-radius: 2mm;
+			margin-top: 5px;
+		}
+
+		.but {
+			font-size: 25px;
+			font-weight: bolder;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			display: flex;
+			background-color: rgb(255, 255, 255);
+			color: #341400;
+			border: #1c0b00 solid 3px;
+			border-radius: 2mm;
+			width: 780px;
+			padding: 18px 300px;
+			margin: 10px;
+			transition: 100ms ease-in-out;
+		}
+
+		.btnOff{
+			display: none;
+		}
+
+		.btnOn{
+			display: block;
+		}
+
+
+		.but:hover {
+			background-color: #341400;
+			color: #ffa500;
+			border: #ff5500 solid 3px;
+		}
+
+		hr {
+
+			width: 500px;
+			display: inline-block;
+			position: absolute;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="logo"><h1>SNAKE GAME</h1></div>
+
+	<canvas id="canvas" width="800" height="700"></canvas>
+
+	<div class="menu">
+		<button id="start-btn" class="start but">Game Start</button>
+		<button id="finish-btn" class="finish but btnOff">Finish Game</button>
+	</div>
+
+	<script>
+		const canvas = document.getElementById("canvas");
+		const ctx = canvas.getContext("2d");
+
+		const snake = [{ x: 35, y: 35 }];
+
+		let speed = 1;
+
+		let direction = "direction";
+
+		let food = { x: Math.floor(Math.random() * 70) + 1, y: Math.floor(Math.random() * 70) + 1 };
+
+		function move() {
+			let snakeX = snake[0].x;
+			let snakeY = snake[0].y;
+
+			switch (direction) {
+				case "right":
+					snakeX += speed;
+					break;
+				case "left":
+					snakeX -= speed;
+					break;
+				case "up":
+					snakeY -= speed;
+					break;
+				case "down":
+					snakeY += speed;
+					break;
+			}
+
+			snake.unshift({ x: snakeX, y: snakeY });
+
+			snake.pop();
+		}
+
+		function draw() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			ctx.fillStyle = "#ec2b00";
+			ctx.fillRect(food.x * 10, food.y * 10, 10, 10);
+
+			ctx.fillStyle = "#1c0b00";
+			for (let i = 0; i < snake.length; i++) {
+				ctx.fillRect(snake[i].x * 10, snake[i].y * 10, 10, 10);
+			}
+		}
+
+		function eat() {
+			if (snake[0].x == food.x && snake[0].y == food.y) {
+				food = { x: Math.floor(Math.random() * 80) + 1, y: Math.floor(Math.random() * 70) + 1 };
+				snake.push({});
+			}
+		}
+
+		document.addEventListener("keydown", function (event) {
+			switch (event.key) {
+				case "ArrowRight":
+					direction = "right";
+					break;
+				case "ArrowLeft":
+					direction = "left";
+					break;
+				case "ArrowDown":
+					direction = "down";
+					break;
+				case "ArrowUp":
+					direction = "up";
+					break;
+			}
+		});
+
+		function gameLoop() {
+			move();
+			draw();
+			eat();
+			setTimeout(gameLoop, 100);
+		}
+
+		const startButton = document.querySelector(".start");
+		const finishButton = document.querySelector(".finish");
+
+		startButton.onclick = function () {
+			gameLoop();
+			startButton.classList.add("btnOff");
+			finishButton.classList.remove("btnOff");
+		}
+
+		finishButton.onclick = function () {
+			document.location.reload(true);
+		}
+
+
+	</script>
+</body>
+
+</html>

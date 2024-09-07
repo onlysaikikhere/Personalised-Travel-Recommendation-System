@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
             box-sizing: border-box;
         }
 
-        body, html {
+        body,
+        html {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100%;
             overflow-y: auto;
@@ -63,18 +65,45 @@
         }
 
         .grid-item {
-            padding: 15px;
-            background-color: #007bff;
-            color: white;
+            align-items: center;
+            background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
             border: none;
             border-radius: 5px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
             font-size: 1em;
+            justify-content: center;
+            padding: 3px;
+            touch-action: manipulation;
+            white-space: nowrap;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .grid-item.selected {
-            background-color: #0056b3;
+        .grid-item:active,
+        .grid-item:hover {
+            outline: 0;
+        }
+
+        .grid-item span {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+        }
+
+        .grid-item:hover span {
+            background: none;
+        }
+
+        @media (min-width: 500px) {
+            .grid-item {
+                font-size: 15px;
+            }
         }
 
         button {
@@ -115,6 +144,7 @@
                 opacity: 0;
                 transform: scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -132,6 +162,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="overlay"></div>
@@ -141,18 +172,18 @@
         <form id="travelForm">
             <label for="travelType">Select your travel preferences (3-5):</label>
             <div class="grid-container" id="grid-container">
-                <button type="button" class="grid-item" data-value="Adventure">Adventure</button>
-                <button type="button" class="grid-item" data-value="Relaxation">Relaxation</button>
-                <button type="button" class="grid-item" data-value="Culture">Culture</button>
-                <button type="button" class="grid-item" data-value="Nature">Nature</button>
-                <button type="button" class="grid-item" data-value="City">City</button>
-                <button type="button" class="grid-item" data-value="Tropical">Tropical</button>
-                <button type="button" class="grid-item" data-value="Mountains">Mountains</button>
-                <button type="button" class="grid-item" data-value="Touring">Touring</button>
-                <button type="button" class="grid-item" data-value="Museums">Museums</button>
-                <button type="button" class="grid-item" data-value="Shopping">Shopping</button>
-                <button type="button" class="grid-item" data-value="Food">Food</button>
-                <button type="button" class="grid-item" data-value="Nightlife">Nightlife</button>
+                <button type="button" class="grid-item" data-value="Adventure"><span class="text">Adventure</span></button>
+                <button type="button" class="grid-item" data-value="Relaxation"><span class="text">Relaxation</span></button>
+                <button type="button" class="grid-item" data-value="Culture"><span class="text">Culture</span></button>
+                <button type="button" class="grid-item" data-value="Nature"><span class="text">Nature</span></button>
+                <button type="button" class="grid-item" data-value="City"><span class="text">City</span></button>
+                <button type="button" class="grid-item" data-value="Tropical"><span class="text">Tropical</span></button>
+                <button type="button" class="grid-item" data-value="Mountains"><span class="text">Mountains</span></button>
+                <button type="button" class="grid-item" data-value="Touring"><span class="text">Touring</span></button>
+                <button type="button" class="grid-item" data-value="Museums"><span class="text">Museums</span></button>
+                <button type="button" class="grid-item" data-value="Shopping"><span class="text">Shopping</span></button>
+                <button type="button" class="grid-item" data-value="Food"><span class="text">Food</span></button>
+                <button type="button" class="grid-item" data-value="Nightlife"><span class="text">Nightlife</span></button>
             </div>
             <div class="error" id="travelTypeError"></div>
 
@@ -181,7 +212,7 @@
             });
         });
 
-        document.getElementById('travelForm').addEventListener('submit', function(event) {
+        document.getElementById('travelForm').addEventListener('submit', function (event) {
             event.preventDefault();
             document.getElementById('travelTypeError').textContent = '';
 
@@ -199,20 +230,21 @@
                 },
                 body: JSON.stringify({ travelType }),
             })
-            .then(response => response.json())
-            .then(data => {
-                const recommendationsDiv = document.getElementById('recommendations');
-                if (data.recommendations && data.recommendations.length > 0) {
-                    recommendationsDiv.innerHTML = `<h2>Recommended Spots:</h2><ul>${data.recommendations.map(spot => `<li>${spot}</li>`).join('')}</ul>`;
-                } else {
-                    recommendationsDiv.innerHTML = `<h2>${data.message || 'No recommendations found based on your preferences.'}</h2>`;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting the form.');
-            });
+                .then(response => response.json())
+                .then(data => {
+                    const recommendationsDiv = document.getElementById('recommendations');
+                    if (data.recommendations && data.recommendations.length > 0) {
+                        recommendationsDiv.innerHTML = `<h2>Recommended Spots:</h2><ul>${data.recommendations.map(spot => `<li>${spot}</li>`).join('')}</ul>`;
+                    } else {
+                        recommendationsDiv.innerHTML = `<h2>${data.message || 'No recommendations found based on your preferences.'}</h2>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting the form.');
+                });
         });
     </script>
 </body>
+
 </html>
